@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bleibgesl0oph" path="res://sprites/game_scene/tank.tscn" id="6_rurhu"]
 [ext_resource type="PackedScene" uid="uid://ca2vwy2cjeigk" path="res://sprites/game_scene/crate.tscn" id="7_kk2rg"]
 [ext_resource type="PackedScene" uid="uid://cjwbom1ynbk4r" path="res://sprites/game_scene/landmine.tscn" id="8_b5spy"]
-[ext_resource type="PackedScene" uid="uid://b0vnd4ly1eeyu" path="res://sprites/game_scene/forcefield.tscn" id="9_utbpp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_caljr"]
 
@@ -123,8 +122,5 @@ position = Vector2(-55, 340)
 
 [node name="Landmine2" parent="." unique_id=1322998557 instance=ExtResource("8_b5spy")]
 position = Vector2(60, 351)
-
-[node name="Forcefield" parent="." unique_id=247409179 instance=ExtResource("9_utbpp")]
-position = Vector2(-472, 18)
 
 [connection signal="new_wave" from="." to="GUI" method="set_wave"]

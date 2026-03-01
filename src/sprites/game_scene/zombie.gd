@@ -35,6 +35,8 @@ func actor_setup():
 func set_movement_target(movement_target: Vector2):
   navigation_agent.target_position = movement_target
 
+var avoidance_velocity = Vector2.ZERO
+
 func _physics_process(delta):
   var player_pos = get_tree().get_root().get_node("GameScene/Player").position;
   if player_pos.distance_to(global_position) > 1200:
@@ -48,9 +50,9 @@ func _physics_process(delta):
 
   var target_rot = direction.angle();
 
-  rotation = lerp_angle(rotation, target_rot, 4 * delta);
+  rotation = atan2(linear_velocity.y, linear_velocity.x);
 
-  apply_central_force(direction * movement_speed - linear_velocity * 10);
+  apply_central_force(direction * movement_speed + avoidance_velocity * 5 - linear_velocity * 10);
   # velocity = direction * movement_speed;
   # move_and_slide();
 
@@ -77,3 +79,6 @@ func try_hit():
       print(impact);
     if body is Player:
       body.damage(5);
+
+func _on_velocity_computed(velocity: Vector2):
+  avoidance_velocity = velocity;

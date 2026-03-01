@@ -37,6 +37,7 @@ func _exit_tree() -> void:
 func background_chunks():
   while not stop_thread:
     await get_tree().create_timer(10.0).timeout;
+    regen_nav_map.call_deferred();
     
     var player = get_node("Player");
     for _i in range(0, 5):

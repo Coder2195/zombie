@@ -57,5 +57,6 @@ max_polyphony = 10
 radius = 44.3
 vertices = PackedVector2Array(-16, -22, 23, -17, 23, 20, -15, 26)
 
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_velocity_computed"]
 [connection signal="timeout" from="Timer" to="." method="try_hit"]
 [connection signal="timeout" from="Timer" to="Timer" method="start"]
