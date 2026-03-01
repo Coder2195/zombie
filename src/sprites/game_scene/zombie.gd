@@ -48,9 +48,9 @@ func _physics_process(delta):
   var next_path_position: Vector2 = navigation_agent.get_next_path_position()
   var direction = current_agent_position.direction_to(next_path_position);
 
-  var target_rot = direction.angle();
+  var target_rot = direction.angle()
 
-  rotation = atan2(linear_velocity.y, linear_velocity.x);
+  rotation = lerp_angle(rotation, target_rot, 4 * delta);
 
   apply_central_force(direction * movement_speed + avoidance_velocity * 5 - linear_velocity * 10);
   # velocity = direction * movement_speed;

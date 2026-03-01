@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bjurwkpmmmidl"]
+
+[ext_resource type="Script" uid="uid://damgiwti4bp28" path="res://src/scenes/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bxkqjwsxdauhm" path="res://images/backgrounds/bg1.png" id="1_l6cm7"]
+[ext_resource type="Shader" uid="uid://cpumonckmm4vd" path="res://shaders/sway.gdshader" id="3_bqqt6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wu84c"]
+shader = ExtResource("3_bqqt6")
+
+[node name="MainMenu" type="Control" unique_id=1808578938]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=198626094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l6cm7")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=1575341699]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.5
+offset_top = 139.5
+offset_right = 126.5
+offset_bottom = 236.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1432576653]
+material = SubResource("ShaderMaterial_wu84c")
+layout_mode = 0
+offset_left = 211.0
+offset_top = 226.0
+offset_right = 1048.0
+offset_bottom = 388.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 130
+theme_override_font_sizes/bold_font_size = 130
+bbcode_enabled = true
+text = " Zombie Frenzy"
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="start"]

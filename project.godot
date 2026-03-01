@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Zombie Frenzy"
-run/main_scene="res://scenes/game_scene.tscn"
+run/main_scene="uid://bjurwkpmmmidl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -39,7 +39,7 @@ window/stretch/aspect="expand"
 
 [gui]
 
-theme/custom="res://theme.tres"
+theme/custom="uid://bq4jlm71o6e0r"
 theme/custom_font="res://fonts/mightly_souly.ttf"
 
 [input]
