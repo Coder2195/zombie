@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmt25exlmraxj"]
+[gd_scene format=3 uid="uid://cmt25exlmraxj"]
 
 [ext_resource type="Texture2D" uid="uid://c1qwceruiqgg5" path="res://images/tiles/grass_1.png" id="1_jov6x"]
-[ext_resource type="Script" path="res://src/sprites/game_scene/grass.gd" id="2_i4t3o"]
+[ext_resource type="Script" uid="uid://dnhntd16fmr2x" path="res://src/sprites/game_scene/grass.gd" id="2_i4t3o"]
 
-[node name="Grass" type="Sprite2D"]
+[node name="Grass" type="Sprite2D" unique_id=1541682321]
 z_index = -1000
+z_as_relative = false
 texture = ExtResource("1_jov6x")
 script = ExtResource("2_i4t3o")

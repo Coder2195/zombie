@@ -138,7 +138,7 @@ func use_item():
   var gui = get_node("/root/GameScene/GUI") as GUI;
   var selected = inventory[selected_item];
   if selected == null: return ;
-  
+
   if selected.name == "medkit":
     if health >= 100:
       return ;
@@ -151,7 +151,7 @@ func use_item():
   elif selected.name == "landmine":
     print("Placing landmine");
     var mine = Landmine.create();
-    mine.global_position = global_position + Vector2(0, 30).rotated(rotation);
+    mine.global_position = global_position + Vector2(50, 0).rotated(rotation);
     get_node("/root/GameScene/").add_child(mine);
 
   
