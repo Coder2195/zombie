@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://hewsyrsjorjh"]
 
 [ext_resource type="Script" uid="uid://cbhl00phiuj5q" path="res://src/sprites/game_scene/player.gd" id="1_k8wqu"]
+[ext_resource type="Texture2D" uid="uid://i07dkhcxlxgh" path="res://images/player/player_stand.png" id="2_agt0c"]
 [ext_resource type="Texture2D" uid="uid://bdley7hklyhby" path="res://images/player/player_gun.png" id="2_s30jd"]
 [ext_resource type="AudioStream" uid="uid://h83db8stl205" path="res://sounds/effects/hurt.mp3" id="3_2ioc4"]
 [ext_resource type="AudioStream" uid="uid://igx6372r1v3w" path="res://sounds/effects/pistol.mp3" id="4_4jadq"]
+[ext_resource type="PackedScene" uid="uid://cej7hqll514gu" path="res://sprites/game_scene/item.tscn" id="6_csgfn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nyj60"]
 radius = 11.0
@@ -14,7 +16,12 @@ z_index = 1000
 collision_mask = 34
 script = ExtResource("1_k8wqu")
 
+[node name="SpriteItem" type="Sprite2D" parent="." unique_id=1538825727]
+position = Vector2(-8, 0)
+texture = ExtResource("2_agt0c")
+
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1792946895]
+visible = false
 texture = ExtResource("2_s30jd")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=795023389]
@@ -32,3 +39,9 @@ max_polyphony = 10
 stream = ExtResource("4_4jadq")
 volume_db = -25.0
 max_polyphony = 5
+
+[node name="Item" parent="." unique_id=703832964 instance=ExtResource("6_csgfn")]
+position = Vector2(7, 15)
+scale = Vector2(0.5625, 0.5208333)
+animation = &"landmine"
+count_visible = false

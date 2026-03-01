@@ -23,4 +23,30 @@ func set_wave(wave: int):
   tween.tween_property($Control/Wave, "scale", Vector2(0, 0), 1);
 
 func _ready():
+  set_selected(0);
   set_wave(1);
+  $Control/Damage.visible = true;
+
+func set_selected(index: int):
+  $Control/Inventory/Selection.position.x = index * 126 - 440;
+
+var last_damage_time = -1000;
+
+func take_damage():
+  last_damage_time = Time.get_ticks_msec();
+  $Control/Damage.color.a = 0.5;
+
+func _process(delta: float) -> void:
+  $Control/Damage.color.a = max(0, 0.5 - (Time.get_ticks_msec() - last_damage_time) / 1000.0);
+
+func set_inventory(items: Array[Player.ItemData]):
+  for i in range(len(items)):
+    var item = items[i];
+    var item_node = $Control/Inventory/Control/Inventory/Items.get_child(i) as Item;
+    if item == null:
+      item_node.visible = false;
+    else:
+      item_node.visible = true;
+      item_node.animation = item.name;
+      item_node.get_child(i).get_node("Count").visible = item.count > 1;
+      item_node.get_child(i).get_node("Count").text = str(item.count);

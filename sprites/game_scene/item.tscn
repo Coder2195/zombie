@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cej7hqll514gu"]
+
+[ext_resource type="Texture2D" uid="uid://bea3ai61jp4c1" path="res://images/items/gun.png" id="1_skxpy"]
+[ext_resource type="Texture2D" uid="uid://cj323pv1pl6wm" path="res://images/items/landmine.png" id="1_uaps5"]
+[ext_resource type="Script" uid="uid://cdvyvsetti8qi" path="res://src/sprites/game_scene/item.gd" id="2_0rwde"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rwde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_skxpy")
+}],
+"loop": true,
+"name": &"gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uaps5")
+}],
+"loop": true,
+"name": &"landmine",
+"speed": 5.0
+}]
+
+[node name="Item" type="AnimatedSprite2D" unique_id=703832964]
+sprite_frames = SubResource("SpriteFrames_0rwde")
+animation = &"gun"
+script = ExtResource("2_0rwde")
+
+[node name="Count" type="RichTextLabel" parent="." unique_id=619363727]
+offset_left = 4.0
+offset_right = 50.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = " 3"
