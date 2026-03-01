@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://hewsyrsjorjh" path="res://sprites/game_scene/player.tscn" id="1_7fx2t"]
 [ext_resource type="Script" uid="uid://c0wnl0vwdxcdx" path="res://src/scenes/game_scene.gd" id="1_770wg"]
+[ext_resource type="Texture2D" uid="uid://dq7cotvv4kxil" path="res://images/tiles/purple_gem.png" id="2_mw25s"]
 [ext_resource type="Texture2D" uid="uid://dxn33gagcudqg" path="res://icon.svg" id="3_cjb2d"]
 [ext_resource type="PackedScene" uid="uid://by1x50o2g8532" path="res://sprites/game_scene/gui.tscn" id="4_lbpxj"]
+[ext_resource type="Texture2D" uid="uid://cnynwmq0g078k" path="res://images/tiles/wic.png" id="4_tcjrq"]
 [ext_resource type="AudioStream" uid="uid://7o5n2lut3es1" path="res://sounds/music/game.mp3" id="5_417xc"]
 [ext_resource type="PackedScene" uid="uid://bleibgesl0oph" path="res://sprites/game_scene/tank.tscn" id="6_rurhu"]
 [ext_resource type="PackedScene" uid="uid://ca2vwy2cjeigk" path="res://sprites/game_scene/crate.tscn" id="7_kk2rg"]
@@ -35,7 +37,7 @@ collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_caljr")
 
 [node name="Icon" type="Sprite2D" parent="StaticBody2D2" unique_id=294765124]
-texture = ExtResource("3_cjb2d")
+texture = ExtResource("2_mw25s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1522313962]
 position = Vector2(-0.126984, -0.0290108)
@@ -63,7 +65,7 @@ collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_caljr")
 
 [node name="Icon" type="Sprite2D" parent="StaticBody2D3" unique_id=370172621]
-texture = ExtResource("3_cjb2d")
+texture = ExtResource("4_tcjrq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=318102300]
 position = Vector2(-0.126984, -0.0290108)

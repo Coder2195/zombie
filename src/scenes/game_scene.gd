@@ -7,7 +7,7 @@ var last_pos = Vector2(0, 0);
 
 signal new_wave(wave: int);
 
-var tiles = [preload("res://images/tiles/wic.png")];
+var tiles = [preload("res://images/tiles/wic.png"), preload("res://images/tiles/purple_gem.png")];
 
 var chunk_map = {}
 
@@ -67,7 +67,7 @@ func generate_chunk(pos: Vector2i):
       body.rotation = randf() * 2 * PI;
     
       var sprite = (body.get_children().get(0) as Sprite2D);
-      var rand_num = randi_range(0, 1);
+      var rand_num = randi_range(0, tiles.size());
       if rand_num < tiles.size():
         sprite.texture = tiles[rand_num];
       
